@@ -17,6 +17,14 @@
 
 [View Live Platform](http://localhost:5175/) (when running locally)
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="src/assets/myfarm1.PNG" alt="MYFARM AFRICA Landing Page" width="400">
+  <img src="src/assets/myfarm2.PNG" alt="MYFARM AFRICA Investment Options" width="400">
+  <img src="src/assets/myfarm3.PNG" alt="MYFARM AFRICA Dashboard" width="400">
+</p>
+
 ## ✨ Features
 
 ### 🎯 Core Functionality
@@ -63,7 +71,7 @@
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/myfarm-africa.git
+   git clone https://github.com/omasleek/myfarm-africa.git
    cd myfarm-africa
    ```
 
@@ -139,52 +147,7 @@ myfarm-africa/
 - **Modals**: Glassmorphic with backdrop blur
 - **Forms**: Validation states with error messaging
 
-## 🚀 Deployment
 
-### Vercel (Recommended)
-
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-### Netlify
-
-```bash
-npm run build
-# Upload dist/ folder to Netlify
-```
-
-### Traditional Hosting
-
-```bash
-npm run build
-# Upload dist/ contents to your web server
-```
-
-## 📈 Performance
-
-- **Lighthouse Score**: 95+ (Performance, Accessibility, SEO)
-- **Bundle Size**: Optimized with code splitting
-- **Image Optimization**: Lazy loading with WebP support
-- **Caching**: Efficient asset caching strategies
-
-## 🔧 Development
-
-### Available Scripts
-
-```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm run preview  # Preview production build
-npm run lint     # Run ESLint
-```
-
-### Code Quality
-
-- **ESLint**: Configured for React best practices
-- **Prettier**: Code formatting (future implementation)
-- **TypeScript**: Planned migration for type safety
 
 ## 🤝 Contributing
 
@@ -210,7 +173,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **MYFARM AFRICA**
 
 - Email: omachilda.dev@gmail.com
-- Website: [myfarmafrica.com](https://myfarmafrica.com)
 - Built by: omachilda
 
 ---

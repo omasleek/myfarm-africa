@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "/logo.svg";
 
 const Header = ({
   onInvestClick,
@@ -76,7 +77,9 @@ const Header = ({
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="text-2xl font-bold text-[#0B3D2E]">MYFARM AFRICA</div>
+        <div className="flex items-center">
+          <img src={logo} alt="MYFARM AFRICA" className="h-12 w-auto" />
+        </div>
         <ul className="hidden md:flex space-x-6">
           <li>
             <a
