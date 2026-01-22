@@ -4,28 +4,28 @@ import { motion } from "framer-motion";
 const InvestmentOpportunities = () => {
   const opportunities = [
     {
-      title: "Maize Farm Investment",
-      description:
-        "Invest in high-yield maize farming with sustainable practices.",
-      roi: "15%",
-      duration: "12 months",
-      impact: "Feeds 500 families",
+      title: 'Maize Farm Investment',
+      description: 'Invest in high-yield maize farming with sustainable practices.',
+      roi: '15%',
+      duration: '12 months',
+      impact: 'Feeds 500 families',
+      image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=250&fit=crop&crop=center',
     },
     {
-      title: "Rice Plantation",
-      description:
-        "Support rice cultivation in fertile lands for steady returns.",
-      roi: "18%",
-      duration: "10 months",
-      impact: "Employs 200 locals",
+      title: 'Rice Plantation',
+      description: 'Support rice cultivation in fertile lands for steady returns.',
+      roi: '18%',
+      duration: '10 months',
+      impact: 'Employs 200 locals',
+      image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&h=250&fit=crop&crop=center',
     },
     {
-      title: "Vegetable Greenhouse",
-      description:
-        "Modern greenhouse tech for year-round vegetable production.",
-      roi: "20%",
-      duration: "8 months",
-      impact: "Reduces food imports by 30%",
+      title: 'Vegetable Greenhouse',
+      description: 'Modern greenhouse tech for year-round vegetable production.',
+      roi: '20%',
+      duration: '8 months',
+      impact: 'Reduces food imports by 30%',
+      image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=250&fit=crop&crop=center',
     },
   ];
 
@@ -48,20 +48,31 @@ const InvestmentOpportunities = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               whileHover={{ y: -10 }}
-              className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition"
+              className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden"
             >
-              <h3 className="text-2xl font-semibold text-[#0B3D2E] mb-4">
-                {opp.title}
-              </h3>
-              <p className="text-gray-600 mb-4">{opp.description}</p>
-              <div className="mb-4">
-                <p className="text-[#F5C400] font-bold">ROI: {opp.roi}</p>
-                <p className="text-gray-600">Duration: {opp.duration}</p>
-                <p className="text-gray-600">Impact: {opp.impact}</p>
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={opp.image}
+                  alt={opp.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-semibold mb-1">{opp.title}</h3>
+                </div>
               </div>
-              <button className="bg-[#0B3D2E] text-white px-6 py-2 rounded hover:bg-[#F5C400] hover:text-[#0B3D2E] transition">
-                Invest Now
-              </button>
+              <div className="p-6">
+                <p className="text-gray-600 mb-4">{opp.description}</p>
+                <div className="mb-4 space-y-1">
+                  <p className="text-[#F5C400] font-bold">ROI: {opp.roi}</p>
+                  <p className="text-gray-600 text-sm">Duration: {opp.duration}</p>
+                  <p className="text-gray-600 text-sm">Impact: {opp.impact}</p>
+                </div>
+                <button className="w-full bg-[#0B3D2E] text-white px-6 py-3 rounded hover:bg-[#F5C400] hover:text-[#0B3D2E] transition font-semibold">
+                  Invest Now
+                </button>
+              </div>
             </motion.div>
           ))}
         </div>

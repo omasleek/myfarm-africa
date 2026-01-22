@@ -1,4 +1,5 @@
 import React from "react";
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -95,28 +96,28 @@ const Footer = () => {
                 className="hover:text-[#F5C400] transition text-2xl"
                 aria-label="Facebook"
               >
-                📘
+                <FaFacebook />
               </a>
               <a
                 href="#"
                 className="hover:text-[#F5C400] transition text-2xl"
                 aria-label="Twitter"
               >
-                🐦
+                <FaTwitter />
               </a>
               <a
                 href="#"
                 className="hover:text-[#F5C400] transition text-2xl"
                 aria-label="LinkedIn"
               >
-                💼
+                <FaLinkedin />
               </a>
               <a
                 href="#"
                 className="hover:text-[#F5C400] transition text-2xl"
                 aria-label="Instagram"
               >
-                📷
+                <FaInstagram />
               </a>
             </div>
           </div>

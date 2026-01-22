@@ -3,42 +3,72 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section
-      id="home"
-      className="h-screen flex items-center justify-center bg-gradient-to-br from-[#0B3D2E] via-green-600 to-[#F5C400] text-white"
-    >
-      <div className="container mx-auto px-4 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-5xl md:text-7xl font-bold mb-6"
-        >
-          Invest in Africa's Agricultural Future
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="text-xl md:text-2xl mb-8"
-        >
-          Grow your wealth while nourishing communities. Sustainable farming
-          investments with high returns.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="space-x-4"
-        >
-          <button className="bg-[#F5C400] text-[#0B3D2E] px-8 py-4 rounded-lg font-bold hover:bg-white transition">
-            Invest Now
-          </button>
-          <button className="border-2 border-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#0B3D2E] transition">
-            Get Started
-          </button>
-        </motion.div>
+    <section id="home" className="relative h-[85vh] md:h-[90vh] overflow-hidden">
+      {/* Cinematic Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0B3D2E] via-green-700 to-[#F5C400]">
+        {/* Simulated Landscape Layers */}
+        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0B3D2E] to-transparent opacity-80"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-green-800 to-transparent opacity-60"></div>
+        <div className="absolute top-1/4 left-1/3 w-32 h-32 bg-green-600 rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-[#F5C400] rounded-full opacity-10 animate-bounce"></div>
       </div>
+
+      {/* Content */}
+      <div className="relative z-10 flex items-center h-full">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl">
+            <motion.h1
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+            >
+              Invest in Africa's
+              <span className="block text-[#F5C400]">Agricultural Future</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+              className="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed"
+            >
+              Empowering African agriculture through smart, sustainable investments.
+              Grow your wealth while nourishing communities with high-yield returns.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <button className="bg-[#F5C400] text-[#0B3D2E] px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg">
+                Start Investing
+              </button>
+              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#0B3D2E] hover:scale-105 transition-all duration-300">
+                Learn How It Works
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Elements */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2, delay: 1 }}
+        className="absolute bottom-20 right-20 text-6xl opacity-20"
+      >
+        🌴
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2, delay: 1.5 }}
+        className="absolute bottom-32 right-32 text-4xl opacity-15"
+      >
+        🌾
+      </motion.div>
     </section>
   );
 };
