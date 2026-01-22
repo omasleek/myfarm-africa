@@ -24,9 +24,6 @@ function App() {
   const [isDetailedModalOpen, setIsDetailedModalOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
-  const handleInvestClick = () => {
-    setIsModalOpen(true);
-  };
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -56,10 +53,6 @@ function App() {
     setIsLoginModalOpen(true);
   };
 
-  const handleInvestmentSelect = (investment) => {
-    setSelectedInvestment(investment);
-    setIsDetailedModalOpen(true);
-  };
 
   const closeDetailedModal = () => {
     setIsDetailedModalOpen(false);
@@ -72,7 +65,6 @@ function App() {
     closeDetailedModal();
   };
 
-  const openContactModal = () => setIsContactModalOpen(true);
   const closeContactModal = () => setIsContactModalOpen(false);
 
   if (isLoggedIn) {
@@ -82,13 +74,8 @@ function App() {
   return (
     <div className="App">
       <Header
-        onInvestClick={handleInvestClick}
-        isLoggedIn={isLoggedIn}
         onLogin={openLoginModal}
         onSignup={openSignupModal}
-        onLogout={handleLogout}
-        onInvestmentSelect={handleInvestmentSelect}
-        onContact={openContactModal}
       />
       <main>
         <Hero />

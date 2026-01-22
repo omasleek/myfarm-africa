@@ -32,14 +32,9 @@ const HowItWorks = () => {
   return (
     <section id="how-it-works" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-center text-[#0B3D2E] mb-12"
-        >
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#0B3D2E] mb-12">
           How It Works
-        </motion.h2>
+        </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <motion.div

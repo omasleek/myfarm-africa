@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+
 const CallToAction = () => {
   return (
     <section className="py-20 bg-[#F5C400] text-[#0B3D2E]">

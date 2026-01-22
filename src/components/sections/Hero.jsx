@@ -1,9 +1,11 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative h-[85vh] md:h-[90vh] overflow-hidden">
+    <section
+      id="home"
+      className="relative h-[85vh] md:h-[90vh] overflow-hidden"
+    >
       {/* Cinematic Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0B3D2E] via-green-700 to-[#F5C400]">
         {/* Simulated Landscape Layers */}
@@ -17,58 +19,34 @@ const Hero = () => {
       <div className="relative z-10 flex items-center h-full">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl">
-            <motion.h1
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
-            >
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Invest in Africa's
               <span className="block text-[#F5C400]">Agricultural Future</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-              className="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed"
-            >
-              Empowering African agriculture through smart, sustainable investments.
-              Grow your wealth while nourishing communities with high-yield returns.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
+            </h1>
+            <p className="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed">
+              Empowering African agriculture through smart, sustainable
+              investments. Grow your wealth while nourishing communities with
+              high-yield returns.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-[#F5C400] text-[#0B3D2E] px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg">
                 Start Investing
               </button>
               <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#0B3D2E] hover:scale-105 transition-all duration-300">
                 Learn How It Works
               </button>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Floating Elements */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2, delay: 1 }}
-        className="absolute bottom-20 right-20 text-6xl opacity-20"
-      >
+      <div className="absolute bottom-20 right-20 text-6xl opacity-20">
         🌴
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2, delay: 1.5 }}
-        className="absolute bottom-32 right-32 text-4xl opacity-15"
-      >
+      </div>
+      <div className="absolute bottom-32 right-32 text-4xl opacity-15">
         🌾
-      </motion.div>
+      </div>
     </section>
   );
 };

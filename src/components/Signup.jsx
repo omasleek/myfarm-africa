@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 
 const Signup = ({ isOpen, onClose, onSwitchToLogin }) => {
   const [formData, setFormData] = useState({

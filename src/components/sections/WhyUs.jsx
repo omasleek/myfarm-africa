@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
+
 const WhyUs = () => {
   const stats = [
     { number: "5,000+", label: "Trusted Investors" },

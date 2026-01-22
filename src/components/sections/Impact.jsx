@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+
 const Impact = () => {
   return (
     <section id="impact" className="py-20 bg-gradient-to-r from-[#0B3D2E] to-green-600 text-white">

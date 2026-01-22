@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 
 const InvestmentModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
