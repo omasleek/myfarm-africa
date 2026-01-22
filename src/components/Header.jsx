@@ -2,7 +2,68 @@ import React, { useState } from "react";
 import logo from "/logo.svg";
 
 const Header = ({ onLogin, onSignup }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const investmentOptions = [
+    { name: "Crop Farming Investment", roi: "15-20%", duration: "6-9 months" },
+    {
+      name: "Livestock Farming Investment",
+      roi: "18-25%",
+      duration: "6-12 months",
+    },
+    {
+      name: "Greenhouse & Smart Farming",
+      roi: "20-30%",
+      duration: "9-12 months",
+    },
+    {
+      name: "Agro-Processing Investment",
+      roi: "22-28%",
+      duration: "12 months",
+    },
+    {
+      name: "Export-Oriented Agriculture",
+      roi: "25-35%",
+      duration: "12-18 months",
+    },
+    {
+      name: "Farmland Leasing & Ownership",
+      roi: "10-18%",
+      duration: "Long-term",
+    },
+    {
+      name: "Organic Vegetable Farming",
+      roi: "16-22%",
+      duration: "8-10 months",
+    },
+    {
+      name: "Fruit Orchard Investment",
+      roi: "19-26%",
+      duration: "12-24 months",
+    },
+    {
+      name: "Aquaculture & Fish Farming",
+      roi: "21-29%",
+      duration: "10-15 months",
+    },
+    {
+      name: "Dairy Farming Investment",
+      roi: "17-24%",
+      duration: "9-14 months",
+    },
+    {
+      name: "Spice & Herb Cultivation",
+      roi: "23-31%",
+      duration: "8-12 months",
+    },
+    { name: "Timber & Agroforestry", roi: "12-20%", duration: "Long-term" },
+  ];
+
+  const handleInvestmentClick = () => {
+    setIsDropdownOpen(false);
+    // Handle investment selection if needed
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
@@ -28,13 +89,39 @@ const Header = ({ onLogin, onSignup }) => {
               How It Works
             </a>
           </li>
-          <li>
-            <a
-              href="#investments"
-              className="text-[#0B3D2E] hover:text-[#F5C400] transition-colors duration-200 font-medium"
+          <li className="relative">
+            <button
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+              className="text-[#0B3D2E] hover:text-[#F5C400] transition-colors duration-200 font-medium flex items-center"
             >
-              Investments
-            </a>
+              Investments ▼
+            </button>
+            {isDropdownOpen && (
+              <div
+                className="absolute top-full left-0 bg-white shadow-lg rounded-lg p-4 w-80 grid grid-cols-2 gap-2 z-10 border border-gray-100"
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+              >
+                {investmentOptions.map((option, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleInvestmentClick(option)}
+                    className="text-left p-2 hover:bg-gray-50 rounded text-sm transition-colors duration-200"
+                  >
+                    <div className="font-semibold text-[#0B3D2E]">
+                      {option.name}
+                    </div>
+                    <div className="text-xs text-gray-600">
+                      ROI: {option.roi}
+                    </div>
+                    <div className="text-xs text-gray-600">
+                      Duration: {option.duration}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            )}
           </li>
           <li>
             <a
@@ -117,13 +204,39 @@ const Header = ({ onLogin, onSignup }) => {
                 </a>
               </li>
               <li>
-                <a
-                  href="#investments"
-                  className="block text-[#0B3D2E] hover:text-[#F5C400] transition-colors duration-200 font-medium text-lg"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="flex items-center justify-between w-full text-[#0B3D2E] hover:text-[#F5C400] transition-colors duration-200 font-medium text-lg"
                 >
                   Investments
-                </a>
+                  <svg className={`w-4 h-4 transform transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isDropdownOpen && (
+                  <div className="mt-3 space-y-2 pl-4">
+                    {investmentOptions.map((option, index) => (
+                      <button
+                        key={index}
+                        onClick={() => {
+                          handleInvestmentClick(option);
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="block w-full text-left p-2 hover:bg-gray-50 rounded text-sm transition-colors duration-200"
+                      >
+                        <div className="font-semibold text-[#0B3D2E]">
+                          {option.name}
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          ROI: {option.roi}
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          Duration: {option.duration}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </li>
               <li>
                 <a
